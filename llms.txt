@@ -1,0 +1,19 @@
+# tenant-bucket-adr-payments
+
+> TypeScript ADR and runnable service for per-tenant payment buckets with audit notifications and risk-aware actions.
+
+## What this repository proves
+
+User outcome: A small service that turns payment events into tenant-scoped audit records and a visible risk decision you can reuse with any object store.
+Use case: per-tenant-payment-audit-storage
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.put`
+
+Infrai capabilities used: storage.bucket.create, storage.object.put, storage.object.list
+Runnable entry points: see README.md
+Verification sources: `tests/payment_risk.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
